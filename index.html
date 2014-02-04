@@ -1,0 +1,92 @@
+---
+layout: bootcamp
+root: .
+venue: Next-Generation Sequencing
+address: Palais de Congres, Montreal, Quebec
+country: Canada
+humandate: Apr 14, 2014
+humantime: 9:00 am - 4:30 pm
+startdate: 2014-04-14
+latlng: 45.530677,-73.624497
+registration: open
+instructor: ["Titus Brown"]
+contact: admin@software-carpentry.org
+---
+{% include bootcamps/instructors.html %}
+
+<p>
+  <strong>What:</strong>
+  This workshop will be a master class in next-generation sequencing
+  based on those run at <a href="http://bioinformatics.msu.edu/ngs-summer-course-2013">Michigan State University</a>
+  for the past several summers.
+</p>
+
+<p>
+  <strong>Who:</strong>
+  The course is aimed at postgraduate students and other scientists
+  who are familiar with basic concepts in both programming and bioinformatics.
+</p>
+
+{% include bootcamps/requirements.html %}
+
+{% include bootcamps/contact.html %}
+
+<hr/>
+
+<h2>Setup</h2>
+
+<div class="row-fluid">
+  <div class="span6">
+    {% include setup/overview-bash.html %}
+  </div>
+  <div class="span6">
+    {% include setup/overview-editor.html %}
+  </div>
+</div>
+
+<div class="row-fluid">
+  <div class="span6">
+    {% include setup/overview-python.html %}
+  </div>
+  <div class="span6">
+    {% include setup/overview-git.html %}
+  </div>
+</div>
+
+<h2>Windows</h2>
+
+<div class="row-fluid">
+  <div class="span6">
+    {% include setup/windows-bash.html %}
+    {% include setup/windows-editor.html %}
+  </div>
+  <div class="span6">
+    {% include setup/windows-python.html %}
+  </div>
+</div>
+
+<h2>Mac OS X</h2>
+
+<div class="row-fluid">
+  <div class="span6">
+    {% include setup/macosx-bash.html %}
+    {% include setup/macosx-git.html %}
+  </div>
+  <div class="span6">
+    {% include setup/macosx-editor.html %}
+    {% include setup/macosx-python.html %}
+  </div>
+</div>
+
+<h2>Linux</h2>
+
+<div class="row-fluid">
+  <div class="span6">
+    {% include setup/linux-bash.html %}
+    {% include setup/linux-git.html %}
+    {% include setup/linux-editor.html %}
+  </div>
+  <div class="span6">
+    {% include setup/linux-python.html %}
+  </div>
+</div>
