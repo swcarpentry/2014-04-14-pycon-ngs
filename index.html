@@ -11,82 +11,81 @@ latlng: 45.530677,-73.624497
 registration: open
 instructor: ["Titus Brown"]
 contact: admin@software-carpentry.org
+eventbrite: 10151618765
 ---
-{% include bootcamps/instructors.html %}
+<h2>General Information</h2>
 
 <p>
-  <strong>What:</strong>
-  This workshop will be a master class in next-generation sequencing
+  This workshop is a master class in next-generation sequencing
   based on those run at <a href="http://bioinformatics.msu.edu/ngs-summer-course-2013">Michigan State University</a>
   for the past several summers.
 </p>
+
+{% if page.eventbrite %}
+<iframe src="http://www.eventbrite.com/tickets-external?eid={{page.eventbrite}}&ref=etckt" frameborder="0" height="250" width="100%" scrolling="auto"></iframe>
+{% endif %}
 
 <p>
   <strong>Who:</strong>
   The course is aimed at postgraduate students and other scientists
   who are familiar with basic concepts in both programming and bioinformatics.
+  <em>Note that the workshop is open to everyone, not just PyCon attendees.</em>
 </p>
 
-{% include bootcamps/requirements.html %}
+{% if page.latlng %}
+<p>
+  <strong>Where:</strong>
+  {{ page.address }}.
+  Get directions with
+  <a href="http://www.openstreetmap.org/?mlat={{ page.latlng | replace:',','&mlon=' }}&zoom=16">OpenStreetMap</a>
+  or
+  <a href="http://maps.google.com/maps?q={{ page.latlng }}">Google Maps</a>.
+</p>
+{% endif %}
 
-{% include bootcamps/contact.html %}
+<p>
+  <strong>Requirements:</strong>
+  Participants must bring a laptop with a few specific software packages installed
+  (listed below).
+</p>
+
+<p>
+  <strong>Contact</strong>:
+  Please mail
+  {% if page.contact %}
+    <a href='mailto:{{page.contact}}'>{{page.contact}}</a>
+  {% else %}
+    <a href='mailto:{{site.contact}}'>{{site.contact}}</a>
+  {% endif %}
+  for more information.
+</p>
+
+{% if page.instructor %}
+<p>
+  <strong>Instructors:</strong>
+  {{page.instructor | join: ', ' %}}
+</p>
+{% endif %}
+
+<hr/>
+
+<h2>Sponsors</h2>
+<p>
+  <a href="https://www.enthought.com/"><img src="./img/enthoughtPyCon.png" alt="Enthought" /></a>
+</p>
+<p>
+  Our thanks to <a href="https://www.enthought.com/">Enthought</a> for their
+  generous sponsorship of this bootcamp.
+</p>
 
 <hr/>
 
 <h2>Setup</h2>
 
-<div class="row-fluid">
-  <div class="span6">
-    {% include setup/overview-bash.html %}
-  </div>
-  <div class="span6">
-    {% include setup/overview-editor.html %}
-  </div>
-</div>
-
-<div class="row-fluid">
-  <div class="span6">
-    {% include setup/overview-python.html %}
-  </div>
-  <div class="span6">
-    {% include setup/overview-git.html %}
-  </div>
-</div>
-
-<h2>Windows</h2>
-
-<div class="row-fluid">
-  <div class="span6">
-    {% include setup/windows-bash.html %}
-    {% include setup/windows-editor.html %}
-  </div>
-  <div class="span6">
-    {% include setup/windows-python.html %}
-  </div>
-</div>
-
-<h2>Mac OS X</h2>
-
-<div class="row-fluid">
-  <div class="span6">
-    {% include setup/macosx-bash.html %}
-    {% include setup/macosx-git.html %}
-  </div>
-  <div class="span6">
-    {% include setup/macosx-editor.html %}
-    {% include setup/macosx-python.html %}
-  </div>
-</div>
-
-<h2>Linux</h2>
-
-<div class="row-fluid">
-  <div class="span6">
-    {% include setup/linux-bash.html %}
-    {% include setup/linux-git.html %}
-    {% include setup/linux-editor.html %}
-  </div>
-  <div class="span6">
-    {% include setup/linux-python.html %}
-  </div>
-</div>
+<p>
+  To participate in a Software Carpentry bootcamp, 
+  you will need working copies of certain software packages.
+  Please make sure to install everything
+  (or at least to download the installers)
+  <em>before</em> the start of your bootcamp.
+</p>
