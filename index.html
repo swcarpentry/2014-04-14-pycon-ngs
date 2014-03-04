@@ -16,14 +16,11 @@ eventbrite: 10151618765
 <h2>General Information</h2>
 
 <p>
+  <strong>What:</strong>
   This workshop is a master class in next-generation sequencing
   based on those run at <a href="http://bioinformatics.msu.edu/ngs-summer-course-2013">Michigan State University</a>
   for the past several summers.
 </p>
-
-{% if page.eventbrite %}
-<iframe src="http://www.eventbrite.com/tickets-external?eid={{page.eventbrite}}&ref=etckt" frameborder="0" height="250" width="100%" scrolling="auto"></iframe>
-{% endif %}
 
 <p>
   <strong>Who:</strong>
@@ -67,16 +64,19 @@ eventbrite: 10151618765
 </p>
 {% endif %}
 
-<hr/>
+{% if page.eventbrite %}
+<iframe src="http://www.eventbrite.com/tickets-external?eid={{page.eventbrite}}&ref=etckt" frameborder="0" height="250" width="100%" scrolling="auto"></iframe>
+{% endif %}
 
 <h2>Sponsors</h2>
-<p>
-  <a href="https://www.enthought.com/"><img src="./img/enthoughtPyCon.png" alt="Enthought" /></a>
-</p>
-<p>
-  Our thanks to <a href="https://www.enthought.com/">Enthought</a> for their
-  generous sponsorship of this bootcamp.
-</p>
+
+    <p>
+    <a href="https://www.enthought.com/"><img src="./img/orgs/enthoughtPyCon.png" alt="Enthought" /></a>
+    </p>
+    <p>
+    Our thanks to <a href="https://www.enthought.com/">Enthought</a> for their
+    generous sponsorship of this bootcamp.
+    </p>
 
 <hr/>
 
