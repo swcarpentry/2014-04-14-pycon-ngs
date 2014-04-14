@@ -13,96 +13,15 @@ instructor: ["Titus Brown"]
 contact: admin@software-carpentry.org
 eventbrite: 10151618765
 ---
-<h2>General Information</h2>
 
-<p>
-  <strong>What:</strong>
-  This one-day workshop on analyzing next-generation sequencing data (NGS) will cover the following topics:
-</p>
-<ul>
-  <li>
-    cloud computing for analyzing NGS;
-  </li>
-  <li>
-    the basics of mapping, variant calling, and assembly;
-    and
-  </li>
-  <li>
-    mRNAseq quantification and differential expression analysis.
-  </li>
-</ul>
-<p>
-  The workshop will also introduce complete cloud-based workflows for de novo mRNAseq and metagenome sequence analysis.
-  Attendees will also be introduced to a much large set of NGS materials available online
-  at <a href="http://ged.msu.edu/angus/tutorials-2013/">http://ged.msu.edu/angus/tutorials-2013/</a>.
-  No prior computational experience is required; some prior biological expertise is useful.
-</p>
-
-<p>
-  <strong>Who:</strong>
-  The course is aimed at postgraduate students and other scientists who are familiar with basic concepts in biology.
-  <em>Note that the workshop is open to everyone, not just PyCon attendees.</em>
-</p>
-
-{% if page.latlng %}
-<p>
-  <strong>Where:</strong>
-  {{ page.address }}.
-  Get directions with
-  <a href="http://www.openstreetmap.org/?mlat={{ page.latlng | replace:',','&mlon=' }}&zoom=16">OpenStreetMap</a>
-  or
-  <a href="http://maps.google.com/maps?q={{ page.latlng }}">Google Maps</a>.
-</p>
-{% endif %}
-
-<p>
-  <strong>Requirements:</strong>
-  Participants must bring a laptop with a few specific software packages installed
-  (listed below).
-</p>
-
-<p>
-  <strong>Contact</strong>:
-  Please mail
-  {% if page.contact %}
-    <a href='mailto:{{page.contact}}'>{{page.contact}}</a>
-  {% else %}
-    <a href='mailto:{{site.contact}}'>{{site.contact}}</a>
-  {% endif %}
-  for more information.
-</p>
-
-{% if page.instructor %}
-<p>
-  <strong>Instructors:</strong>
-  {{page.instructor | join: ', ' %}}
-</p>
-{% endif %}
-
-{% if page.eventbrite %}
-<iframe src="http://www.eventbrite.com/tickets-external?eid={{page.eventbrite}}&ref=etckt" frameborder="0" height="250" width="100%" scrolling="auto"></iframe>
-{% endif %}
-
-<h2>Sponsors</h2>
-
-    <p>
-    <a href="https://www.enthought.com/"><img src="./img/orgs/enthoughtPyCon.png" alt="Enthought" /></a>
-    </p>
-    <p>
-    Our thanks to <a href="https://www.enthought.com/">Enthought</a> for their
-    generous sponsorship of this bootcamp.
-    </p>
-
-<hr/>
-
-<h2>Foo 3</h2>
+<h2>Tutorial instructions</h2>
 
 <ol>
 
 <li> Download <a href='https://raw.githubusercontent.com/ged-lab/khmer-protocols/2014-pycon/keys/amazon.pem'>amazon.pem</a>
 and save it to your computer as a .PEM file.
 
-<li> Log in: <a href="http://khmer-protocols.readthedocs.org/en/2014-pycon/amazon/log-in-with-ssh-win.html">Windows instructions</a> or <a href="http://khmer-protocols.readthedocs.org/en/2014-pycon/amazon/log-in-with-ssh-mac.html">Mac OS X instructions</a>.  Use username 'ubuntu', not 'root'.
+<li> Log in: <a href="http://khmer-protocols.readthedocs.org/en/2014-pycon/amazon/log-in-with-ssh-win.html">Windows instructions</a> or <a href="http://khmer-protocols.readthedocs.org/en/2014-pycon/amazon/log-in-with-ssh-mac.html">Mac OS X instructions</a>.  Use username 'ubuntu', not 'root'; pull machine names from <a href="">here</a>.
 
 <li> Execute <tt>sudo bash</tt> to change to the super-user account once you're
 logged in.
@@ -115,18 +34,8 @@ cd /data
 curl -O http://public.ged.msu.edu.s3.amazonaws.com/mrnaseq-subset.tar
 tar xvf mrnaseq-subset.tar
 </pre>
+
+<li> For mRNAseq, start <a href='http://khmer-protocols.readthedocs.org/en/2014-pycon/mrnaseq/1-quality.html'>at the Eel Pond protocol</a>
+
+<li> Later in the day, we may do the <A href="http://khmer-protocols.readthedocs.org/en/2014-pycon/misc/variant.html">variant calling tutorial</a>.
 </ol>
-
-
-<h2>Setup</h2>
-
-<p>
-  For this Software Carpentry bootcamp, you will need only a modern
-  Web browser (a recent version of one of Safari, Google Chrome, or
-  Firefox will suffice) and an SSH client.  For the SSH client, If you
-  are on Windows, please download PuTTY and PuTTYgen
-  from <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">here</a>.
-  On Mac OS X and Linux, you do not need to download or install
-  anything for SSH.
-</p>
-
