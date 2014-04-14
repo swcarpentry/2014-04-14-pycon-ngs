@@ -36,3 +36,9 @@
 36	ec2-23-22-237-12.compute-1.amazonaws.com
 37	ec2-54-237-9-114.compute-1.amazonaws.com
 38	ec2-54-198-128-92.compute-1.amazonaws.com
+39	ec2-54-204-53-121.compute-1.amazonaws.com
+
+spare	ec2-54-197-34-122.compute-1.amazonaws.com
+John	ec2-54-242-242-117.compute-1.amazonaws.com
+QP	ec2-54-237-161-107.compute-1.amazonaws.com
+Andrew	ec2-174-129-174-255.compute-1.amazonaws.com
