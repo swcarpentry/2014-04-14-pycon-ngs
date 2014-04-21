@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="en-us" />
+<title>/ngs-master-class</title>
+</head>
+<body>Welcome to the NGS master class!<br
+/><br
+/>We'll use this Etherpad to promote discussion throughout the day. We'll post links and code, and also answer any questions you may have. Please sign in your name at the top right.<br
+/><br
+/><br
+/>Class website: <a href="http://swcarpentry.github.io/2014-04-14-pycon-ngs/">http://swcarpentry.github.io/2014-04-14-pycon-ngs/</a><br
+/><br
+/><b>digital normalization</b> paper:<br
+/><a href="http://arxiv.org/abs/1203.4802">http://arxiv.org/abs/1203.4802</a><br
+/><br
+/><br
+/>See answers to your questions below:<br
+/><br
+/>The tutorial link is<br
+/><a href="http://swcarpentry.github.io/2014-04-14-pycon-ngs/links.html">http://swcarpentry.github.io/2014-04-14-pycon-ngs/links.html</a><br
+/><br
+/>Illumina sequencing video: <a href="https://www.youtube.com/watch?v=HMyCqWhwB8E">https://www.youtube.com/watch?v=HMyCqWhwB8E</a><br
+/><br
+/>Noisy splicing: <a href="http://www.plosgenetics.org/article/info:doi/10.1371/journal.pgen.1001236">http://www.plosgenetics.org/article/info:doi/10.1371/journal.pgen.1001236</a><br
+/><br
+/>If you have questions in the future, there are forums available:<br
+/>SeqAnswers: <a href="http://seqanswers.com/">http://seqanswers.com/</a><br
+/>BioStars: <a href="https://www.biostars.org/">https://www.biostars.org/</a><br
+/><br
+/>Homology: <a href="https://en.wikipedia.org/wiki/Homology_%28biology%29">https://en.wikipedia.org/wiki/Homology_%28biology%29</a><br
+/>Homologs are two genes which are evolutionarily related.<br
+/>Orthologous genes are similar genes in two or more species.<br
+/>Paralogous genes are similar genes that are in the same species.<br
+/><br
+/>Blogs:<br
+/><a href="http://www.homolog.us/">http://www.homolog.us/</a><br
+/><a href="http://gettinggeneticsdone.blogspot.ca/">http://gettinggeneticsdone.blogspot.ca/</a><br
+/><a href="http://ivory.idyll.org/blog/">http://ivory.idyll.org/blog/</a><br
+/><a href="https://bcbio.wordpress.com/">https://bcbio.wordpress.com/</a><br
+/><a href="http://simplystatistics.org/">http://simplystatistics.org/</a><br
+/><br
+/>Other resources:<br
+/><a href="https://en.wikibooks.org/wiki/Next_Generation_Sequencing_%28NGS%29">https://en.wikibooks.org/wiki/Next_Generation_Sequencing_%28NGS%29</a><br
+/><a href="http://www-huber.embl.de/users/anders/HTSeq/doc/overview.html">http://www-huber.embl.de/users/anders/HTSeq/doc/overview.html</a><br
+/><a href="http://bedtools.readthedocs.org/en/latest/">http://bedtools.readthedocs.org/en/latest/</a><br
+/><a href="http://samtools.sourceforge.net/">http://samtools.sourceforge.net/</a><br
+/><a href="http://www.digitalbiologist.com/2013/06/python-next-gen-sequencing.html">http://www.digitalbiologist.com/2013/06/python-next-gen-sequencing.html</a><br
+/>Compute Canada: <a href="https://computecanada.ca/en/">https://computecanada.ca/en/</a><br
+/><br
+/><b>User problems:</b><br
+/><br
+/>I encountered the following problem<br
+/><br
+/>The program 'curl' is currently not installed.&nbsp; You can install it by typing:<br
+/>sudo apt-get install curl<br
+/><br
+/>I encountered a problem trying to figure out where within SSH to load the key --&gt; It's within "Auth" not XII. I am updating the original doc accordingly.<br
+/><br
+/>Also, at least 2 of us got the super creepy Matrix screen after running curl so I think it's normal?<br
+/><br
+/>I had the super creepy matrix screen too, but I restarted PUtty and did a capital "O" instead of 0 and then it worked<br
+/><br
+/><br
+/>Titus: This may be a solution to the last command thing:<br
+/><br
+/><br
+/>mkdir /mnt/data<br
+/>ln -fs /mnt/data /data<br
+/>cd /data<br
+/>curl -O <a href="http://public.ged.msu.edu.s3.amazonaws.com/mrnaseq-subset.tar">http://public.ged.msu.edu.s3.amazonaws.com/mrnaseq-subset.tar</a><br
+/>tar xvf mrnaseq-subset.tar<br
+/><br
+/>echo "You are Done"<br
+/><br
+/>Dropbox alternative:<br
+/>Port forwarding necessary as AWS machine is locked down (ssh in from local machine):<br
+/>&nbsp;&nbsp;&nbsp; $ ssh -i ... -L 8000:127.0.0.1:8000 ubuntu@...<br
+/><br
+/>(Mac only, for putty - <a href="http://www.cs.uu.nl/technical/services/ssh/putty/puttyfw.html">http://www.cs.uu.nl/technical/services/ssh/putty/puttyfw.html</a> )<br
+/><br
+/>Make fastq analysis in /mnt/fastqc instead of /Dropbox/fastqc<br
+/><br
+/>Then on remote machine:<br
+/>&nbsp;&nbsp;&nbsp; $ cd /mnt<br
+/>&nbsp;&nbsp;&nbsp; $ python -m SimpleHTTPServer 8000<br
+/><br
+/>You can then open <a href="http://localhost:8000">http://localhost:8000</a> on local machine to view files.<br
+/><br
+/><b>Questions and Answers:</b><br
+/><br
+/>-Why are we donwloading all these programs?<br
+/><br
+/>There are many bioinformatics tools available to solve common problems like the analyses we are running today. In order to be DRY (<a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)">https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)</a>, we want to use the mature software created by others so that we can focus on the custom aspects of our data analysis. We downloaded the following software:<br
+/><br
+/>khmer - <a href="http://khmer.readthedocs.org/en/v1.0/">http://khmer.readthedocs.org/en/v1.0/</a><br
+/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - de novo sequence assembly and some support tasks<br
+/>FastQC - <a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/">http://www.bioinformatics.babraham.ac.uk/projects/fastqc/</a><br
+/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - quality control visualizations<br
+/>Trimmomatic - <a href="http://www.usadellab.org/cms/?page=trimmomatic">http://www.usadellab.org/cms/?page=trimmomatic</a><br
+/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Remove adapter sequeces<br
+/>FASTX - <a href="http://hannonlab.cshl.edu/fastx_toolkit/">http://hannonlab.cshl.edu/fastx_toolkit/</a><br
+/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Trim reads to remove low quality bases<br
+/><br
+/>So then you can think about a pipeline like this:<br
+/><br
+/>1. Visually inspect data to find low quality issues, e.g. low quality base calls and contamination with adapter sequences.<br
+/>2. Remove adapter sequences with Trimmomatic.<br
+/>3. Remove low quality bases with FASTX.<br
+/>4. Assemble the transcriptome using khmer.<br
+/><br
+/>-What are the commands we are using to download and install the software?<br
+/><br
+/>You can learn about most commands by running `man cmd` or `cmd --help`, where cmd is the name of the command.<br
+/><br
+/>curl - downloads files<br
+/>tar - extracts files from a tarball<br
+/><br
+/>-What about Galaxy?&nbsp;<br
+/><br
+/><a href="http://galaxyproject.org/">http://galaxyproject.org/</a><br
+/><br
+/>Galaxy is a great bioinformatics project that aims to enable reproducible analyses. The main downside is that it is harder to automate, customize, and perform heavy computing (e.g. parallelization). If you have a smaller project, e.g. 3 cases and 3 controls of RNA-seq data, and you want to perform a traditional differential expression analysis, Galaxy will work well. If you have many samples and are performing more customized analyses, you'll need to learn how to run these tools from the command line.<br
+/><br
+/>-What is the best way to slice bams from 1000 genomes to create a subsample?<br
+/><br
+/>I would recommend using samtools. For example, if you only want the reads that map to chromosome 1 from a file called data.bam, you could run the following command: `samtools view -b data.bam chr1 &gt; data_chr1.bam`.<br
+/><br
+/><a href="http://samtools.sourceforge.net/">http://samtools.sourceforge.net/</a><br
+/><br
+/>-What machine would you recommend?<br
+/><br
+/>If you are going to analyze large data sets on a regular basis, you will need to find a compute cluster to use. If you are a student, your university will likely have one. The actual machine is less important than having the support staff that can help you obtain a login and direct you to documentation on how to submit jobs.<br
+/>t<br
+/><br
+/><br
+/>- What about the AWS bid mechanism?<br
+/><br
+/>AWS, Amazon’s Web Services consists of a large number of different computer resources. Most of the services consist of either some form of storage or computation. EC2 is their defacto computational service. EC2 comes in several flavors. Notably, there is the On-Demand and Spot options. With EC2 On Demand, you pay the rate set by Amazon, but are guaranteed that the computer with run when you want and for as long as you want. The EC2 Spot instance is more flexible. You may bid on the price, but there is no guarantee as to when the computer will run. This means that, for very long an intensive tasks, it becomes possible to pay far less, at the cost of (theoretically temporary) interruptions, which occur when you are outbid or when EC2 On Demand instances are run, as they take precedence of EC2 Spot instances.<br
+/><br
+/>John: My recommendation would be to inquire about computing resources at your university/company. They may already have resources available that would save you from having to set up your computing environment on your own.<br
+/><br
+/><a href="http://ivory.idyll.org/blog/what-is-diginorm.html">http://ivory.idyll.org/blog/what-is-diginorm.html</a> What is digital normalization?<br
+/><br
+/>Etienne Question: I'm unable to install khmer on my own server. Any idea for the error:&nbsp;<br
+/>/usr/lib64/python2.6/site-packages/khmer-1.0_dirty-py2.6-linux-x86_64.egg/khmer/_khmermodule.so: undefined symbol: gzopen?<br
+/><br
+/>Etienne, it is probably an issue with zlib. I have trouble all the time with zlib/gzopen on the cluster I use as well. Do you have a sys admin that you could ask for help? (I'm the sysadmin :) ) Haha. Well then I can't help you. If it makes you feel better, our sys admin hasn't been able to solve all our zlib problems either. I can't use the XML package for R because of unresolved zlib issues. Ok, perfect. Thanks<br
+/><br
+/><br
+/><br
+/><br
+/>&nbsp;Is there a good review paper that summarizes the theory and gives a good overview of current&nbsp; tools out there?<br
+/>Maybe one of us can write it? ;) I've been looking it up and I've just found blogposts on individual sub-topics but no over-arching grand review.<br
+/><br
+/>This is difficult because every tool has its strengths and weaknesses. And often they trade speed and accuracy. Here are some relevant papers:<br
+/><br
+/>Comparison of differential expression software: <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3608160/?tool=pmcentrez&report=abstract">http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3608160/?tool=pmcentrez&amp;report=abstract</a><br
+/>Comparison of short read mappers: <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2712089/">http://www.ncbi.nlm.nih.gov/pmc/articles/PMC2712089/</a><br
+/>Differential expression overview: <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3046478/">http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3046478/</a><br
+/>Heng Li (developer of BWA) summary: <a href="http://lh3lh3.users.sourceforge.net/NGSalign.shtml">http://lh3lh3.users.sourceforge.net/NGSalign.shtml</a><br
+/>RNA sequencing protocol: <a href="http://www.ncbi.nlm.nih.gov/pubmed/21863485">http://www.ncbi.nlm.nih.gov/pubmed/21863485</a><br
+/>ChIP-seq guidelines: <a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3431496/">http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3431496/</a><br
+/><br
+/>-How do you keep track of your analyses (when you don't have a tutorial as a guide)?<br
+/><br
+/>This question has many answers depending on how much of your research is spent doing bioinformatics. If you just do a small analysis every once in a while, you should take notes just like you would if you were doing an experiment. Provide enough details such that you (or someone else) could recreate the results following your directions. In computing, it is traditional to have a README file that explains how to run the code.<br
+/><br
+/>(As a side note, I found this doc as a really useful resource for this question: <a href="http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1000424)+1">http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1000424)+1</a><br
+/><br
+/>So let's say you want to document the analysis you ran today. You could copy paste all the code into a file called, .e.g., analysis.sh. You would also want to add a lot of comments that explain each step (bash ignores anything after the pound sign, #). Then in the README, you could right something like, "To recreate this analysis, run `bash analysis.sh`."<br
+/><br
+/>Personally, I (John) also have an electronic blog. Thus after I look at the FastQC results, for example, I upload some of the figures into a blog post and add my interpretation. Then I can return to it months later and remember what I thought about the data quality. Feel free to talk to me about this.<br
+/><br
+/>When you start to get really advanced, you can start to organize your pipelines into Make files that will automatically run only the parts of the analysis that you have changed.<br
+/><br
+/>Make: <a href="https://en.wikipedia.org/wiki/Make_%28software%29">https://en.wikipedia.org/wiki/Make_%28software%29</a><br
+/>snakemake: <a href="https://bitbucket.org/johanneskoester/snakemake/wiki/Home">https://bitbucket.org/johanneskoester/snakemake/wiki/Home</a><br
+/><br
+/>Has anyone ever heard of Knime (<a href="http://www.knime.org/)">http://www.knime.org/)</a> ? It seems to be a good graphical tool for chaining together various tools for data analysis pipelines. It's a graphical data analysis workflow creation platform.<br
+/><br
+/><br
+/><br
+/>CLC Workbench?&nbsp; <a href="http://www.clcbio.com/products/clc-main-workbench/">http://www.clcbio.com/products/clc-main-workbench/</a><br
+/>Seal Sea Workbench?<br
+/><br
+/>How is curl different from wget? The end result is the same. There are probably use cases for prefering one over the other, but for the simple downloads we have done in this tutorial, wget would be just the same. For the specific details: <a href="http://daniel.haxx.se/docs/curl-vs-wget.html">http://daniel.haxx.se/docs/curl-vs-wget.html</a><br
+/><br
+/>Etienne: Why no do a <a href="http://www.vagrantup.com/">http://www.vagrantup.com/</a> vagrant file to setup everything at once (one time)?<br
+/><br
+/>If you know vagrant, that is a great idea! :-) Most biologists are not familiar. Also, installing one at a time is more realistic as you will likely install software as you need it. Only after you become experienced will you know the full list of software you will utilize.<br
+/><br
+/><br
+/><br
+/><br
+/></body>
+</html>
